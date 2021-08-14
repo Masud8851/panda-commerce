@@ -30,6 +30,7 @@
     
 
     <script>
+        const itemContainer = document.getElementById('item-container')
         function eventDelegate(event){
             // messageSendClick()
             const value = event.target.value
@@ -61,7 +62,11 @@
         //     parent.removeChild(item);
         // })
 
-        
+        itemContainer.addEventListener('click', function(event){
+            const item = event.target;
+            const parent = event.target.parentNode;
+            parent.removeChild(item);
+        })
 
     </script>
 </body>
