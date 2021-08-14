@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    
+    <ul id="item-container">
+        <!-- <li class="item" id="1st-item">Name-1</li>
+        <li class="item">Name-2</li>
+        <li class="item">Name-3</li>
+        <li class="item">Name-4</li> -->
+
+        <li class="item" id="1st-item">
+            <p>Name-1</p>
+        </li>
+        <li class="item">
+            <p>Name-2</p>
+        </li>
+        <li class="item">
+            <p>Name-3</p>
+        </li>
+    </ul>
+    <input type="text" onchange="eventDelegate(event)" width="300px" height="300px" placeholder="write your message here">
+    <br>
+    <button onclick="messageSendClick()">Send</button>
+    
+
+    <script>
+        function eventDelegate(event){
+            // messageSendClick()
+            const value = event.target.value
+            const sendValue = value;
+            const itemContainer = document.getElementById('item-container')
+            const item = document.createElement('li')
+            item.innerHTML = value;
+            itemContainer.appendChild(item);
+            event.target.value=''
+        }
+ 
+        // function messageSendClick(){
+        //     const value = event.target.value
+        //     const sendValue = value;
+        //     const itemContainer = document.getElementById('item-container')
+        //     const item = document.createElement('li')
+        //     item.innerHTML = value;
+        //     itemContainer.appendChild(item);
+        //     event.target.value=''
+        // }
+
+    </script>
+</body>
+</html>
